@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" class="antialiased scroll-smooth selection:bg-moss-200 selection:text-moss-900">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Verdant | The Quiet Encyclopedia</title>
+    
+    <!-- Meta Tags -->
+    <meta name="description" content="Verdant: The quiet encyclopedia of everything alive. A nature-focused knowledge engine powered by Gemini AI, featuring detailed biological entries, field observations, and serene aesthetics.">
+    <meta name="keywords" content="nature, encyclopedia, biology, animals, plants, fungi, biodiversity, gemini ai, educational, science, quiet web">
+    <meta name="author" content="Verdant">
+    <meta name="theme-color" content="#f9f8f6">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Verdant | The Quiet Encyclopedia">
+    <meta property="og:description" content="Explore the quiet encyclopedia of everything alive. A sanctuary for biological knowledge.">
+    <meta property="og:url" content="https://verdant.app">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Verdant | The Quiet Encyclopedia">
+    <meta name="twitter:description" content="Explore the quiet encyclopedia of everything alive. Powered by Gemini.">
+    
+    <!-- Favicon (SVG Leaf) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='24' cy='24' r='24' fill='%232a553b'/%3E%3Cpath d='M24 38V10M24 38C24 38 10 28 10 18M24 32C24 32 36 26 36 20' stroke='white' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              serif: ['Lora', 'serif'],
+            },
+            colors: {
+              earth: {
+                50: '#f9f8f6',
+                100: '#f2ece4',
+                200: '#e6d8cc',
+                300: '#d5bfae',
+                400: '#c2a08a',
+                500: '#b08268',
+                600: '#9d6952',
+                700: '#835442',
+                800: '#6d463a',
+                900: '#593a32',
+              },
+              moss: {
+                50: '#f4f9f5',
+                100: '#e3f0e6',
+                200: '#c5e0cd',
+                300: '#96c7a5',
+                400: '#64a67a',
+                500: '#43875b',
+                600: '#326b48',
+                700: '#2a553b',
+                800: '#234431',
+                900: '#1d3829',
+              },
+              mist: {
+                50: '#f7f7f8',
+                100: '#eeeff1',
+                200: '#dcdde2',
+                300: '#c0c2ca',
+                400: '#9fa3af',
+                500: '#838896',
+                600: '#686d7a',
+                700: '#545863',
+                800: '#464952',
+                900: '#3b3d43',
+              }
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards',
+              'slide-up': 'slideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards',
+              'blob': 'blob 7s infinite',
+              'breathe': 'breathe 4s ease-in-out infinite',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              slideUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              blob: {
+                '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                '100%': { transform: 'translate(0px, 0px) scale(1)' },
+              },
+              breathe: {
+                '0%, 100%': { transform: 'scale(1)', opacity: '0.8' },
+                '50%': { transform: 'scale(1.05)', opacity: '1' },
+              }
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      html {
+        scrollbar-gutter: stable;
+      }
+      body {
+        background-color: #f9f8f6;
+        color: #1d3829;
+      }
+      /* Hide scrollbar for clean horizontal scrolls */
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react-dom": "https://aistudiocdn.com/react-dom@^19.2.0",
+    "@supabase/supabase-js": "https://aistudiocdn.com/@supabase/supabase-js@^2.86.0",
+    "openai": "https://esm.sh/openai@4.28.0",
+    "lucide-react": "https://esm.sh/lucide-react@0.344.0?external=react,react-dom",
+    "vite": "https://aistudiocdn.com/vite@^7.2.4",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
